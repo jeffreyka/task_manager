@@ -18,6 +18,7 @@ all_tasks = ""
 number_of_tasks = 0
 number_of_users = 0
 set_password = True
+login = True
 current_date = datetime.datetime.now()
 
 #====Login Section====
@@ -39,23 +40,28 @@ with open('user.txt', 'r+') as f:
  
  # This loop is used to repeatedly check whether the user has entered the correct username by comparing the user enters with what
  # is stored in the username variable. If they do not match the user is asked to try again.
-for name in user:
+while login:
     username = input("\nPlease enter your username: ")
     if username in user:
         print("Your username is correct")
-        break
+        login = False
     else:
+        login = True
         print("You username is incorrect, please try again.")
 
  # This loop is used to repeatedly check whether the user has entered the correct password by comparing what the user enters with what
  # is stored in the password variable. If they do not match the user is asked to try again.
-for passphrase in user:
+
+login = True
+
+while login:
     password = input("Please enter your password: ")
     if password in passw:
         print("Your password is correct")
-        break
+        login = False
     else:
         print("Your password is incorrect")
+        login = True
 
 while True:
     if username == 'admin':
