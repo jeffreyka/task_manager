@@ -161,21 +161,21 @@ while True:
                     print(line)
     
     # If the admin selects option s in the menu the user is shown the count of all users and all tasks
-    elif menu == 's':
+    elif menu == 's'and username == 'admin':
         # This opens the task.txt file with read/write permissions
         with open('tasks.txt', 'r+') as f:
             # This loop will add 1 to the number_of_tasks variable for every line in the tasks.txt
             for line in f:
                 number_of_tasks += 1
-        
-        # This opens the task.txt file with read/write permissions
-        with open('user.txt', 'r+') as f:
-            # This loop will add 1 to the number_of_users variable for every line in the tasks.txt
-            for line in f:
-                number_of_users += 1
-        
-        # This will print the total amount of tasks and users
-        print(f"\nThere are {number_of_users} users and {number_of_tasks} tasks.")
+            
+            # This opens the task.txt file with read/write permissions
+            with open('user.txt', 'r+') as f:
+                # This loop will add 1 to the number_of_users variable for every line in the tasks.txt
+                for line in f:
+                    number_of_users += 1
+            
+            # This will print the total amount of tasks and users
+            print(f"\nThere are {number_of_users} users and {number_of_tasks} tasks.")
 
     # If the user selects option e in the menu the goodbye message is displayed and the program ends
     elif menu == 'e':
